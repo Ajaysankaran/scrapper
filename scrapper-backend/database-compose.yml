@@ -1,11 +1,16 @@
 version: '3.8'
 services:
-  mongodb:
-    image:
+  db:
+    image: postgres:15.4
+    restart: always
+    environment:
+      - POSTGRES_DB=scrapper
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
-      - '27017:27017'
+      - '5432:5432'
     volumes:
-      - dbdata:./db
+      - db:/var/lib/postgresql/data:/Users/ajaysankaran/Desktop/code/db/
 volumes:
-  dbdata:
-
+  db:
+    driver: local
