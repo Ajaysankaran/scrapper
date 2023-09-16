@@ -1,5 +1,5 @@
 from flask import Flask
-from config import init_db, execute_migrations
+from config import init_db
 from routes import product_blueprint
 
 app = None
@@ -9,8 +9,7 @@ def create_app():
     global app
     app = Flask(__name__ or "scrapper")
     print(f'Creating app')
-    execute_migrations()
-    init_db()
+    init_db(app)
     app.register_blueprint(product_blueprint)
     return app
 

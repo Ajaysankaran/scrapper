@@ -1,1 +1,1 @@
-from .database import init_db, execute_migrations
+from .database import init_db, db
