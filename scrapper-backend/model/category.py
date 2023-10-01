@@ -13,6 +13,7 @@ class Category(Audit, db.Model):
     __tablename__ = "category"
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = db.Column(db.VARCHAR(255))
+    description = db.Column(db.VARCHAR(500))
 
 
 class CategoryParams(Audit, db.Model):
@@ -21,3 +22,4 @@ class CategoryParams(Audit, db.Model):
     category_id = db.Column(UUID(as_uuid=True))
     name = db.Column(db.VARCHAR(255))
     description = db.Column(db.VARCHAR(255))
+    data_type = db.Column(db.VARCHAR(100))

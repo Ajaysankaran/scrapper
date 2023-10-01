@@ -15,10 +15,11 @@ def init_db(app):
     global db
     db = SQLAlchemy(app)
     print(db)
-    from model import Category, CategoryParams, Config
 
-    with app.app_context():
-        db.create_all()
+    # Automatically create Tables
+    # from model import Category, CategoryParams, Config
+    # with app.app_context():
+    #     db.create_all()
 
 
 def database():
